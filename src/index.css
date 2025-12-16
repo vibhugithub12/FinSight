@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import "tailwindcss";
+
+
+@keyframes ping-smooth {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+ 
+  40% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  70% {
+    opacity: 0.7;
+    transform: scale(1.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Custom color palette for Tailwind */
+@theme {
+  --color-primary: #008dd5;
+  --color-primary-light: #C4DAE5;
+  --color-secondary: #23a866;
+  --color-secondary-light: #D8F3E6;
+  --color-background-light: #fffdf8;
+  --font-script: Great Vibes, serif;
+  --font-mobile: 'Poppins', system-ui;
+  --animation-ping-smooth: ping-smooth 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.ping-smooth {
+  animation: var(--animation-ping-smooth);
+}
