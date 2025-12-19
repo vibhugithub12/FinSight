@@ -18,7 +18,7 @@ const Navbar = () => {
       if (dropDownVisible) {
         // Check if click is on the dropdown button or dropdown menu
         const isDropdownButton = event.target.closest("button");
-        const isDropdownMenu = event.target.closest(".dropdown-menu");
+        const isDropdownMenu = event.target.closest(".dropdown-menu"); //tabular comparison with others, 
 
         if (!isDropdownButton && !isDropdownMenu) {
           setDropDownVisible(false);
