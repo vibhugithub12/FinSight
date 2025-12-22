@@ -10,7 +10,7 @@ const Contact = () => {
 
     emailjs
       .sendForm("gmail_service", "contact_template", form.current, {
-        publicKey: "lA5DQluUn5XgBOdN",
+        publicKey: "lA5DQluUn5XgBOdNd",
       },
           document.getElementById("sendEmail").textContent = "Sending..."
     )
