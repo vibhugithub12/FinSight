@@ -10,8 +10,10 @@ const Contact = () => {
 
     emailjs
       .sendForm("gmail_service", "contact_template", form.current, {
-        publicKey: "lA5DQluUn5XgBOdNd",
-      })
+        publicKey: "lA5DQluUn5XgBOdN",
+      },
+          document.getElementById("sendEmail").textContent = "Sending..."
+    )
       .then(
         () => {
           console.log("SUCCESS!");
@@ -30,7 +32,7 @@ const Contact = () => {
         },
         (error) => {
           console.log("FAILED...", error.text);
-          document.getElementById("sendEmail").textContent = "Error ❌";
+          document.getElementById("sendEmail").textContent = "Server Error, try later!";
           document.getElementById("sendEmail").style.backgroundColor =
             "#AE130D";
              if(timerRef.current){
@@ -66,41 +68,45 @@ const Contact = () => {
           Contact Us
         </h2>
         <div className="flex md:gap-x-8 md:items-end justify-between w-full">
-          <label className="md:text-lg">Name</label>
+          <label className="text-lg" htmlFor="user_name">Name</label>
           <input
-            className="outline text-sm text-black md:text-base px-2 py-1"
+            className="outline text-black md:text-base px-2 py-1  w-2/3"
             maxLength={30}
             type="text"
             name="user_name"
+            id="user_name"
           />
         </div>
 
         <div className="flex gap-x-8 md:items-end justify-between w-full">
-          <label className="md:text-lg">Email</label>
+          <label className="text-lg" htmlFor="user_email">Email</label>
           <input
-            className="outline text-sm text-black md:text-base font-thin px-2 py-1"
+            className="outline text-sm text-black md:text-base font-thin px-2 py-1 w-2/3"
             maxLength={50}
             type="email"
             name="user_email"
+            id="user_email"
           />
         </div>
 
         <div className="flex gap-x-8 md:items-end justify-between w-full">
-          <label className="md:text-lg">Title</label>
+          <label className="text-lg" htmlFor="title">Title</label>
           <input
-            className="outline text-sm text-black md:text-base px-2 py-1"
+            className="outline text-sm text-black md:text-base px-2 py-1 w-2/3"
             maxLength={40}
             type="text"
             name="title"
+            id="title"
           />
         </div>
 
-        <div className="flex gap-x-8 md:items-end justify-between w-full ">
-          <label className="md:text-lg">Message</label>
+        <div className="flex gap-x-8 md:items-end justify-around w-full ">
+          <label className="text-lg" htmlFor="message">Message</label>
           <textarea
             className="outline overflow-y-scroll text-sm text-black md:text-xs px-2 py-1 md:w-52"
             maxLength={200}
             name="message"
+            id="message"
           />
         </div>
 
