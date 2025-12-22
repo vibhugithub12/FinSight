@@ -1,5 +1,5 @@
 import { PieChart } from "@mui/x-charts/PieChart";
-import { use, useState } from "react";
+import { useState } from "react";
 
 const Tracker = () => {
   const [expenses, setExpenses] = useState({
@@ -51,8 +51,9 @@ const Tracker = () => {
 
   return (
     <div className="flex flex-col">
+
       <p className="text-4xl md:self-center text-center p-4">
-        Say <span className="text-primary underline">Hello</span> to the Tracker
+        Say <span className="text-primary">Hello</span> to the Tracker
         👋
       </p>
       <div className="flex h-screen">
